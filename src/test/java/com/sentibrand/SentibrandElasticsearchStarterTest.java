@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.RestTemplate;
 
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
