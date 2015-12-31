@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
 @RestController
-@RequestMapping("/twitterdatas")
 public class TwitterDatasRestEndpoint {
 
     private final TwitterDataService twitterDataService;
@@ -19,9 +20,9 @@ public class TwitterDatasRestEndpoint {
         this.twitterDataService = twitterDataService;
     }
 
-    @RequestMapping(method = PUT)
-    public ResponseEntity saveOrUpdate(@RequestBody final TwitterDatas twitterDatas) {
-        twitterDataService.saveOrUpdate(twitterDatas.getTwitterData());
+    @RequestMapping(value = "/twitterdatas", method = PUT)
+    public ResponseEntity saveOrUpdate(@RequestBody final List<TwitterData> twitterDatas) {
+        twitterDataService.saveOrUpdate(twitterDatas);
         return ResponseEntity.ok().build();
     }
 }

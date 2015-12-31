@@ -18,9 +18,9 @@ public class TwitterData implements Serializable {
     private final Double sentiment;
 
     @JsonCreator
-    public TwitterData(@JsonProperty Long id,
-                       @JsonProperty String text,
-                       @JsonProperty Double sentiment) {
+    public TwitterData(@JsonProperty("id") Long id,
+                       @JsonProperty("text") String text,
+                       @JsonProperty("sentiment") Double sentiment) {
         this.id = id;
         this.text = text;
         this.sentiment = sentiment;
