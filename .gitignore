@@ -1,3 +1,7 @@
+.log
+.st
+.lock
+
 ### OSX ###
 .DS_Store
 .AppleDouble
