@@ -1,7 +1,7 @@
 package com.sentibrand;
 
 import org.elasticsearch.client.Client;
-import org.elasticsearch.common.settings.Settings;
+import org.elasticsearch.common.settings.ImmutableSettings;
 import org.elasticsearch.node.NodeBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ public class EmbeddedElasticsearchConfiguration {
         return NodeBuilder.nodeBuilder()
                 .clusterName("testCluster")
                 .local(true)
-                .settings(Settings.builder()
+                .settings(ImmutableSettings.builder()
                         .put("path.home", ".elasticdata")
                         .build())
                 .build()

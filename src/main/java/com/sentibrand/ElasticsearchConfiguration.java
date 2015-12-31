@@ -2,7 +2,7 @@ package com.sentibrand;
 
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
-import org.elasticsearch.common.settings.Settings;
+import org.elasticsearch.common.settings.ImmutableSettings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -20,10 +20,7 @@ public class ElasticsearchConfiguration {
 
     @Bean
     public Client client() {
-        return TransportClient
-                .builder()
-                .settings(Settings.builder().put("cluster.name", clusterName).build())
-                .build()
+        return new TransportClient(ImmutableSettings.builder().put("cluster.name", clusterName).build())
                 .addTransportAddress(new InetSocketTransportAddress(InetAddress.getLoopbackAddress(), 9300));
     }
 }
