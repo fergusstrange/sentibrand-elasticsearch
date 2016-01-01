@@ -7,8 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
-
 @Component
 public class BrandSentimentSliceService {
 
@@ -31,7 +29,7 @@ public class BrandSentimentSliceService {
                     .actionGet()
                     .getId();
         }
-        catch (IOException e) {
+        catch (Exception e) {
             logger.error("Unable to index brand sentiment slice", e);
             throw new RuntimeException(e);
         }
