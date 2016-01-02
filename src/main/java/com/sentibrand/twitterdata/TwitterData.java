@@ -22,7 +22,8 @@ public class TwitterData implements Serializable {
     @JsonCreator
     public TwitterData(@JsonProperty("id") Long id,
                        @JsonProperty("text") String text,
-                       @JsonProperty("sentiment") Double sentiment, ZonedDateTime dateTime) {
+                       @JsonProperty("sentiment") Double sentiment,
+                       @JsonProperty("dateTime") ZonedDateTime dateTime) {
         this.id = id;
         this.text = text;
         this.sentiment = sentiment;
