@@ -15,7 +15,7 @@ import java.net.InetAddress;
 @Profile("!embedded-es")
 public class ElasticsearchConfiguration {
 
-    @Value("${elastic.cluster.name:elasticsearch_ferguss}")
+    @Value("${elastic.cluster.name:elasticsearch}")
     private String clusterName;
 
     @Bean
